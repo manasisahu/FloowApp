@@ -1,0 +1,138 @@
+
+Feature: FloowDrive App Validation
+
+
+Scenario: Home page Arrow button Validations
+Given user is on Home Page
+Then verify total number of journeys is displayed 
+And verify total miles is displayed
+And verify score card is displayed 
+And verify backward arrow button is displayed and enabled
+And verify forward arrow button is displayed and enabled
+
+Scenero: Recording tab validations
+Given user is on Home Page
+Then verify Pause recording button is displayed and enabled
+
+Scenero: Journeys tab validations
+Given user is on Home Page
+When user clicks Journeys tab
+Then all recorded journeys are displayed
+
+Scenero: tabs switching validations
+Given user is on Home Page
+When user clicks Journeys tab
+and user clicks Home tab
+Then Home page displayed
+
+Scenero: tabs sliding validations
+Given user is on Home Page
+When user slides the page towards right side
+Then verify journeys page is displayed
+And user slides the page towards right side
+And verify More options displayed
+And user slides the page towards left side
+And verify journeys page is displayed
+And user slides the page towards left side
+And verify Home page is displayed
+
+Scenero: Home page left arrow button validations
+Given user is on Home Page
+When user clicks left arrow button
+Then Time of Day is displayed
+
+Scenero: Home page left arrow button validations
+Given user is on Home Page
+When user clicks left arrow button
+And user clicks right arrow button
+Then score is displayed
+
+Scenero: Home page left arrow button validations
+Given user is on Home Page
+Then verify all the cards are available   // below data will be retrieved in the form of DataTable in StepDefinition to verify
+|Score|
+|Smooth Driving|
+|Mobile Use|
+|Speed|
+|Fatigue|
+|Time of Day|
+
+Scenario Journeys Tab
+Given user is on Home Page
+When User clicked the Journeys tab
+Then user view Journey recording information 
+
+Scenario: More Options Validation
+Given user is on Home Page
+When user clicks More tab
+Then verify additional options displayed      // below data will be retrieved in the form of DataTable in StepDefinition to verify
+|Preferences|
+|FAQ|
+|Terms and Conditions|
+|About|
+|Change Password|
+|Contact Us|
+|Tutorial|
+|Optimisations|
+
+Scenario: More - Preference Options Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the Preferences option
+Then verify the options can be selected   // below data will be retrieved in the form of DataTable in StepDefinition to verify
+|Upload journeys over WIFI only|
+|Battery conversion|
+|Measurement units|
+|Show confirmation when selecting a journey type|
+
+Scenario: More - FAQS Options Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the FAQS option
+Then verify the options can be selected   // below data will be retrieved in the form of DataTable in StepDefinition to verify
+|About the Floow Drive app|
+|Use of the Floow Drive app|
+|Journey Recording|
+|Scoring|
+
+
+Scenario: More- Terms and Conditions Option Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the Terms and Conditions option
+Then verify the terms and conditions message displayed
+
+   
+Scenario: More-About Option Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the About option
+Then verify the Log out and Third party licenses button displayed
+
+Scenario: More-Change Password Option Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the Change Password option
+Then verify Current Password, New Password and Repeat new password fields are enabled and displayed
+And verify Change it button displayed
+
+Scenario: More-Contact Us Option Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the Contact Us option
+Then verify thefloow support email id is displayed within the clickable button
+
+Scenario: More- Tutorial Option Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks Tutorial option
+Then verify tutorial pages
+
+Scenario: More - Optimizations Options Validation
+Given user is on Home Page
+When user clicks More tab
+And user clicks the Optimizations option
+Then verify the options can be checked or selected   // below data will be retrieved in the form of DataTable in StepDefinition to verify
+|Location Services|
+|Adaptive Battery|
+|System Battery Optimisations|
